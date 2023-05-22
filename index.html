@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECE Trackmania Cup 2023</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer="true"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Open+Sans&family=Roboto:wght@300&display=swap" rel="stylesheet">
+</head>
+<body style="overflow-x: hidden;" class="bg-[#2f2f2f] text-white">
+    <div class=" justify-center text-center mb-2mt-14">
+        <p class="Exo text-3xl mb-2 text-[#5ec08b] mt-6 ml-10"> ECE Trackmania CUP 2k23  🏆</p>
+        <div class=" w-full justify-around flex mx-4" id="slider">
+            <div class="flex justify-around">
+                <img class=" rounded-2xl w-1/2 mt-10" src="https://cdn.discordapp.com/attachments/1022229564761587834/1110212072215687318/port.png" alt="raceMaps slider" id="slide">
+            
+                <div class="w-1/3 px-20 mt-8">
+                    <img class="justify-around" src="https://cdn.discordapp.com/attachments/788291502374780958/1106527912548651099/1683887201607.png" alt="eventLogo">
+                </div>
+        </div>
+    </div>
+    <div class="container mx-auto px-4  mt-14">
+        
+        <div class="text-center">
+            <button class="px-4 py-2 bg-[#5ec08b] text-[#2f2f2f] rounded transition-transform hover:scale-105" id="openRulesBtn">Règlement</button>
+            <button class="px-4 ml-2 py-2 bg-[#5ec08b] text-[#2f2f2f] rounded transition-transform hover:scale-105" id="openFormBtn">S'inscrire à la Cup</button>
+            <button class="px-4 ml-2 py-2 bg-[#5ec08b] text-[#2f2f2f] rounded transition-transform hover:scale-105" id="openRaceMapBtn">Découvrir la liste des Maps</button>
+        </div>
+
+        <div id="Rules" class="hidden justify-center flex mt-10">
+          <div class="container justify-center flex text-center">
+            <div class="lg:w-1/2 w-full justify-center mb-6 lg:mb-0">
+              <h1 class="sm:text-3xl text-2xl font-medium title-font justify-center flex text-[#5ec08b]">Règlement</h1>
+              <div class="w-full mt-1 flex">
+                <div class="px-20 "></div>
+                <div class="px-11"></div>
+                <div class="h-1 justify-center w-32 bg-[#5ec08b] rounded"></div>
+              </div>
+              <div class="container text-[#D9D2D2] justify-center ">
+                <div class="mt-10 "> 
+                  La compétition se déroule en trois phases : 
+                  <div class="flex justify-center"> la&nbsp;
+                    <div class=" text-center justify-center text-[#5ec08b]">
+                      Phase de Qualification
+                    </div>
+                    , la&nbsp;
+                    <div class=" text-center justify-center text-[#5ec08b]">
+                      Phase d'élimination
+                    </div>
+                    , et la&nbsp;
+                    <div class=" flex text-center justify-center text-[#5ec08b]">
+                      Phase finale
+                    </div>
+                    . 
+                  </div> 
+                </div>
+                <div class="mt-10 px-16"> 
+                  Pendant la 
+                  <span class="text-[#5ec08b]">
+                    Phase de Qualification
+                  </span>
+                  , tous les joueurs s'affrontent en mode Time Attack pendant 8 minutes sur trois maps spécifiques. Les joueurs reçoivent des points pour chaque position obtenue sur chacune des maps.
+                </div>
+                <div class="mt-5"> 
+                  À partir de leur score total sur les trois cartes, les joueurs sont répartis en groupes pour la 
+                  <span class="text-[#5ec08b]">
+                    Phase d'élimination
+                  </span>
+                  . 
+                </div>
+                <div class="mt-5">
+                  Pendant la 
+                  <span class="text-[#5ec08b]">
+                    Phase d'élimination
+                  </span>
+                  , les joueurs s'affrontent en groupe (prédéterminés lors de la 
+                  <span class="text-[#5ec08b]">
+                    Phase de Qualification
+                  </span>
+                  ) lors de rounds sur les trois maps spécifiques. Les joueurs avec le plus de points dans chaque groupe se qualifient pour les 
+                  <span class="text-[#5ec08b]">
+                    finales
+                  </span> 
+                  (le processus de sélection sera ajusté en fonction du nombre de participants).
+                  Pendant la 
+                <span class="text-[#5ec08b]">
+                  Phase finale
+                </span>
+                , les joueurs s'affrontent lors de rounds sur trois maps spécifiques.
+              </div> 
+                <div class="mt-10 text-[#5ec08b] text-2xl">
+                  Le joueur avec le meilleur score remporte la compétition! 
+                </div>
+                <div class="mt-10"> 
+                  Nous vous rappelons que les joueurs doivent respecter les règles du jeu et faire preuve de fair-play envers les autres participants. En cas de non-respect des règles, des sanctions pourront être prises par les organisateurs de la compétition.
+                </div>
+              </div>
+           </div>
+          </div>
+        </div>
+
+        <div class="my-10">
+            <form id="registrationForm" class="hidden justify-center flex">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScBQpULDOxHrjL4Fm1M42A3D9zp31OnqdYSOolFZv6PTC9bSA/viewform?embedded=true" width="640" height="605" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+            </form>
+        </div>
+
+        <div class="hidden" id="downloadRaceMapBtn">
+            <section class="text-[#D9D2D2] body-font">
+                <div class="container px-5 mx-auto">
+                  <div class="flex flex-wrap justify-center w-full mb-20">
+                    <div class="lg:w-1/2 w-full justify-center mb-6 lg:mb-0">
+                      <h1 class="sm:text-3xl text-2xl font-medium title-font justify-center flex text-[#5ec08b]">Race Maps</h1>
+                      <div class="w-full mt-1 flex">
+                        <div class="px-20 "></div>
+                        <div class="px-12"></div>
+                        <div class="h-1 justify-center w-24 mt-1 bg-[#5ec08b] rounded"></div>
+                      </div>
+                      <p class="mt-2">Vous trouverez ici les différentes cartes de jeu sur lesquelles se basent la compétition.</p>
+                    </div>
+                  </div>
+                  <div class="text-[#D9D2D2] mb-1 flex w-full justify-center text-center">Maps proposées pour les&nbsp;<div class=" flex text-center justify-center text-[#5ec08b]">qualifications</div>:</div>
+                  <div class="text-[#D9D2D2] mb-4 w-full justify-center text-center">Les trois maps de qualification se retrouvent finalement sur une seule et unique map, rendant le challenge immersif et incroyable !</div>
+
+                  <div class=" flex flex-wrap -m-4">
+                    <div class="flex justify-evenly">
+                        <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-[#e9eaeb] p-6 rounded-lg">                            
+                            <a href="#" id="show-popup-image6"><img class="h-40 rounded w-full object-cover hover:scale-105 transition-transform object-center mb-6" src="https://cdn.discordapp.com/attachments/1022229564761587834/1108267786687492157/image.png" alt="content"></a>
+                            <div id="popupImage6" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                              <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                                <img class="h-96 rounded w-full object-cover object-center mb-2" src="https://cdn.discordapp.com/attachments/1022229564761587834/1108267786687492157/image.png" alt="content">
+                                <button id="close-popup-image6" class="bg-[#5ec08b] text-white mt-4 mx-20 px-4 py-2 rounded-lg">Fermer</button>
+                              </div>
+                            </div>
+                                                        
+                            
+                            <h3 class="tracking-widest text-[#5ec08b] text-xs font-medium title-font">Qualifs - Fullspeed</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Red valley - Aerial</h2>
+                            <p class="leading-relaxed text-base text-[#2f2f2f]">Map très simple à la surface, mais le beau jeu est laissé aux trajectoires optimisées... que le meilleur gagne!</p>
+                            <div id="show-popup" class="text-white py-1 px-2 rounded-lg transition-transform hover:scale-105 bg-[#5ec08b] inline-flex items-center mt-4"> <a href="#">En savoir plus</a> </div>
+                            <div id="popup" class="hidden fixed top-0 left-0 w-full h-full text-[#2f2f2f] bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                                <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                                <h2 class="text-2xl text-center font-bold text-black mb-4">Red valley - Aerial</h2>
+                                <p class="px-14 text-lg text-center">Conçue pour offrir un défi passionnant aux joueurs de course automobile virtuelle, cette carte est simple visuellement, ce qui peut faciliter la lecture et la compréhension de la trajectoire à suivre. Cependant, cette simplicité apparente peut également masquer des difficultés cachées qui ne sont évidentes qu'après plusieurs essais. Les joueurs doivent donc se montrer prêts à relever le défi et à affronter tous les obstacles qui se dressent sur leur chemin vers la victoire.</p>
+                                <a class="text-slate-500 underline" href="https://trackmania.exchange/maps/download/108744">Download Race Map</a>
+                                <button id="close-popup" class="bg-[#5ec08b] text-white  mx-20 px-4 py-2 rounded-lg mt-4">Fermer</button>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-[#e9eaeb] p-6 rounded-lg">                            
+                            <a href="#" id="show-popup-image7"><img class="h-40 rounded w-full object-cover hover:scale-105 transition-transform object-center mb-6" src="https://cdn.discordapp.com/attachments/1022229564761587834/1108267786687492157/image.png" alt="content"></a> 
+                            <div id="popupImage7" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                              <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                                <img class="h-96 rounded w-full object-cover object-center mb-2" src="https://cdn.discordapp.com/attachments/1022229564761587834/1108267786687492157/image.png" alt="content">
+                                <button id="close-popup-image7" class="bg-[#5ec08b] text-white mt-4 mx-20 px-4 py-2 rounded-lg">Fermer</button>
+                              </div>
+                            </div>
+                            <h3 class="tracking-widest text-[#5ec08b] text-xs font-medium title-font">Qualifs - Trial/Tech</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Red valley - Crêtes</h2>
+                            <p class="leading-relaxed text-base text-[#2f2f2f]">Il est recommandé de travailler cette map offrant des virages serrés et d'autres surprises pour les plus aventureux...</p>
+                            <div id="show-popup1" class="text-white py-1 px-2 rounded-lg transition-transform hover:scale-105 bg-[#5ec08b] inline-flex items-center mt-4"> <a href="#">En savoir plus </a> </div>
+                            <div id="popup1" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 text-[#2f2f2f] bg-opacity-75 flex items-center justify-center">
+                                <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                                <h2 class="text-2xl text-center font-bold text-black mb-4">Red valley - Crêtes</h2>
+                                <p class="px-14 text-lg text-center"> Conçue pour un style deconduite exigeant, cette carte présente des virages serrés et d'autres surprises qui rendront la course plus difficile et plus excitante pour les joueurs les plus aventureux. Les joueurs doivent être prêts à travailler dur pour maîtriser les virages serrés et les autres défis qui les attendent.</p>
+                                <a class="text-slate-500 underline pt-2 "  href="https://trackmania.exchange/maps/download/108746">Download Race Map</a>
+                                <button id="close-popup1" class="bg-[#5ec08b] text-white  mx-20 px-4 py-2 rounded-lg mt-4">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-[#e9eaeb] p-6 rounded-lg">
+                            <a href="#" id="show-popup-image8"><img class="h-40 rounded w-full object-cover hover:scale-105 transition-transform object-center mb-6" src="https://cdn.discordapp.com/attachments/1022229564761587834/1108267786687492157/image.png" alt="content"></a> 
+                            <div id="popupImage8" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                              <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                                <img class="h-96 rounded w-full object-cover object-center mb-2" src="https://cdn.discordapp.com/attachments/1022229564761587834/1108267786687492157/image.png" alt="content">
+                                <button id="close-popup-image8" class="bg-[#5ec08b] text-white mt-4 mx-20 px-4 py-2 rounded-lg">Fermer</button>
+                              </div>
+                            </div>
+                            
+                            
+                            <h3 class="tracking-widest text-[#5ec08b] text-xs font-medium title-font">Qualifs - SpeedTech</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Red Valley - Vallée</h2>
+                            <p class="leading-relaxed text-base text-[#2f2f2f]">Assortiment de sauts, de virages et de plateformes, évitez les poteaux pour gagner de la vitesse!</p>
+                            <div id="show-popup2" class="text-white py-1 px-2 rounded-lg transition-transform hover:scale-105 bg-[#5ec08b] inline-flex items-center mt-4"> <a href="#">En savoir plus </a> </div>
+                            <div id="popup2" class="hidden fixed top-0 left-0 w-full h-full text-[#2f2f2f] bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                                <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                                <h2 class="text-2xl text-center font-bold text-black mb-4">Red Valley - Vallée</h2>
+                                <p class="px-14 text-lg text-center">Cette carte offre un assortiment de défis passionnants pour les joueurs qui aiment les sauts, les virages et les plateformes. Les joueurs doivent être prêts à affronter différents types d'obstacles pour arriver à la ligne d'arrivée en premier. Les joueurs les plus talentueux seront ceux qui pourront éviter les poteaux tout en maintenant leur vitesse maximale.</p>
+                                <a class="text-slate-500 underline pt-2 "  href="https://trackmania.exchange/maps/download/108745">Download Race Map</a>
+                                <button id="close-popup2" class="bg-[#5ec08b] text-white  mx-20 px-4 py-2 rounded-lg mt-4">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="text-[#D9D2D2] flex mb-4 mt-20 w-full justify-center text-center">Maps proposées pour la phase des&nbsp;<div class=" flex text-center justify-center text-[#5ec08b]">éliminations</div>:</div>
+                    <div class="flex justify-evenly">
+                        <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-[#e9eaeb] p-6 rounded-lg">
+                            <a href="#" id="show-popup-image"><img class="h-40 rounded w-full object-cover hover:scale-105 transition-transform object-center mb-6" src="https://cdn.discordapp.com/attachments/1022229564761587834/1106839883353444403/image.png" alt="content"></a>
+                            <div id="popupImage" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                              <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                                <img class="h-96 rounded w-full object-cover object-center mb-2" src="https://cdn.discordapp.com/attachments/1022229564761587834/1106839883353444403/image.png" alt="content">
+                                <button id="close-popup-image" class="bg-[#5ec08b] text-white mt-4 mx-20 px-4 py-2 rounded-lg">Fermer</button>
+                              </div>
+                            </div>
+                            <h3 class="tracking-widest text-[#5ec08b] text-xs font-medium title-font">Éliminations - Tech</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Oasis</h2>
+                            <p class="leading-relaxed text-base text-[#2f2f2f]">Vous retrouverez sur cette course très rapide des enchaînements de virages et de néo-drifts...</p>
+                            <div id="show-popup3" class="text-white py-1 px-2 rounded-lg transition-transform hover:scale-105 bg-[#5ec08b] inline-flex items-center mt-4"> <a href="#">En savoir plus </a> </div>
+                            <div id="popup3" class="hidden fixed top-0 left-0 w-full h-full text-[#2f2f2f] bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                                <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                                <h2 class="text-2xl text-center font-bold text-black mb-4">Oasis</h2>
+                                <p class="text-lg text-center">L'un des éléments clés de cette carte est la nécessité de maîtriser les enchaînements de virages et de néo drifts. Les joueurs devront être en mesure de prendre des virages serrés à grande vitesse tout en effectuant des manoeuvres de drift précises pour conserver leur élan. Les néo drifts, en particulier, sont une technique avancée qui implique de faire pivoter la voiture à 180 degrés tout en maintenant sa vitesse.</p>
+                                <a class="text-slate-500 underline pt-2 "  href="https://trackmania.exchange/maps/download/108749">Download Race Map</a>
+                                <button id="close-popup3" class="bg-[#5ec08b] text-white  mx-20 px-4 py-2 rounded-lg mt-4">Fermer</button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="xl:w-1/4 md:w-1/2 p-4">
+                            <div class="bg-[#e9eaeb] p-6 rounded-lg">                            
+                            <a href="#" id="show-popup-image2"><img class="h-40 rounded w-full object-cover hover:scale-105 transition-transform object-center mb-6" src="https://cdn.discordapp.com/attachments/1022229564761587834/1106839582290481172/image.png" alt="content"></a>
+                            <div id="popupImage2" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                              <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                                <img class="h-96 rounded w-full object-cover object-center mb-2" src="https://cdn.discordapp.com/attachments/1022229564761587834/1106839582290481172/image.png" alt="content">
+                                <button id="close-popup-image2" class="bg-[#5ec08b] text-white mt-4 mx-20 px-4 py-2 rounded-lg">Fermer</button>
+                              </div>
+                            </div>
+                            <h3 class="tracking-widest text-[#5ec08b] text-xs font-medium title-font">Éliminations - Tech</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Obscure</h2>
+                            <p class="leading-relaxed text-base text-[#2f2f2f]">Associant régularité de sections et ambiance tamisée, nous ne pouvons que vous souhaiter bonne chance, pilotes!</p>
+                            <div id="show-popup4" class="text-white py-1 px-2 rounded-lg transition-transform hover:scale-105 bg-[#5ec08b] inline-flex items-center mt-4"> <a href="#">En savoir plus </a> </div>
+                            <div id="popup4" class="hidden fixed top-0 left-0 w-full h-full text-[#2f2f2f] bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                                <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                                <h2 class="text-2xl text-center font-bold text-black mb-4">Obscure</h2>
+                                <p class="text-lg text-center">Pour réussir sur cette carte, les joueurs devront être très attentifs à la piste et avoir une connaissance approfondie de chaque section. Les erreurs peuvent être fatales et entraîneront une perte de vitesse et de temps, ce qui peut être difficile à rattraper.</p>
+                                <a class="text-slate-500 underline pt-2"  href="https://trackmania.exchange/maps/download/108748">Download Race Map</a>
+                                <button id="close-popup4" class="bg-[#5ec08b] text-white  mx-20 px-4 py-2 rounded-lg mt-4">Fermer</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="xl:w-1/4 md:w-1/2 p-4">
+                            <div class="bg-[#e9eaeb] p-6 rounded-lg">
+                            <a href="#" id="show-popup-image3"><img class="h-40 rounded w-full object-cover hover:scale-105 transition-transform object-center mb-6" src="https://cdn.discordapp.com/attachments/1022229564761587834/1106838835918278656/image.png" alt="content"></a>
+                            <div id="popupImage3" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                              <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                                <img class="h-96 rounded w-full object-cover object-center mb-2" src="https://cdn.discordapp.com/attachments/1022229564761587834/1106838835918278656/image.png" alt="content">
+                                <button id="close-popup-image3" class="bg-[#5ec08b] text-white mt-4 mx-20 px-4 py-2 rounded-lg">Fermer</button>
+                              </div>
+                            </div>
+
+                            <h3 class="tracking-widest text-[#5ec08b] text-xs font-medium title-font">Éliminations - Tech</h3>
+                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Port</h2>
+                            <p class="leading-relaxed text-base text-[#2f2f2f]">N'ayez pas peur d'envahir la tranquilité de ce port, il vous le rendra bien avec ses virages meurtriers !</p>
+                            <div id="show-popup5" class="text-white py-1 px-2 rounded-lg transition-transform hover:scale-105 bg-[#5ec08b] inline-flex items-center mt-4"> <a href="#">En savoir plus </a> </div>
+                            <div id="popup5" class="hidden fixed top-0 left-0 w-full h-full text-[#2f2f2f] bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                                <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                                <h2 class="text-2xl text-center font-bold text-black mb-4">Port</h2>
+                                <p class="text-lg text-center">Cette carte de Trackmania se déroule dans un port et offre un défi difficile aux joueurs.Les virages serrés et les sections étroites de la piste offrent un défi constant aux joueurs, qui devront être en mesure de maîtriser chaque virage pour éviter de perdre de la vitesse.</p>
+                                <a class="text-slate-500 underline pt-2 "  href="https://trackmania.exchange/maps/download/108747">Download Race Map</a>
+                                <button id="close-popup5" class="bg-[#5ec08b] text-white  mx-20 px-4 py-2 rounded-lg mt-4">Fermer</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-[#D9D2D2] flex mb-4 mt-20 w-full justify-center text-center">Maps proposées pour la phase&nbsp;<div class=" flex text-center justify-center text-[#5ec08b]">finale</div>:</div>
+                    <div class="flex justify-evenly">
+                      <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-[#e9eaeb] p-6 rounded-lg">                          
+                          <a href="#" id="show-popup-image4"><img class="h-40 rounded w-full object-cover hover:scale-105 transition-transform object-center mb-6" src="https://cdn.discordapp.com/attachments/1022229564761587834/1106840191739641856/image.png" alt="content"></a>
+                          <div id="popupImage4" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                            <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                              <img class="h-96 rounded w-full object-cover object-center mb-2" src="https://cdn.discordapp.com/attachments/1022229564761587834/1106840191739641856/image.png" alt="content">
+                              <button id="close-popup-image4" class="bg-[#5ec08b] text-white mt-4 mx-20 px-4 py-2 rounded-lg">Fermer</button>
+                            </div>
+                          </div>
+
+                          
+                          <h3 class="tracking-widest text-[#5ec08b] text-xs font-medium title-font">Finale - SpeedTech</h3>
+                          <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Moon</h2>
+                          <p class="leading-relaxed text-base text-[#2f2f2f]">Carte rapide et longue, une vitesse minimum sera néanmoins requise pour dépasser vos adversaires.</p>
+                          <div id="show-popup6" class="text-white py-1 px-2 rounded-lg transition-transform hover:scale-105 bg-[#5ec08b] inline-flex items-center mt-4"> <a href="#">En savoir plus </a> </div>
+                          <div id="popup6" class="hidden fixed top-0 left-0 w-full h-full text-[#2f2f2f] bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                            <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                              <h2 class="text-2xl text-center font-bold text-black mb-4">Moon</h2>
+                              <p class="text-lg text-center">Bien que les décors de la carte soient magnifiques, il est important que les joueurs ne se laissent pas distraire par eux. Les joueurs devront garder leur attention sur les virages de la piste pour éviter de perdre de la vitesse et de se faire distancer par leurs adversaires.</p>
+                              <a class="text-slate-500 underline pt-2 "  href="https://trackmania.exchange/maps/download/99830">Download Race Map</a>
+                              <button id="close-popup6" class="bg-[#5ec08b] text-white  mx-20 px-4 py-2 rounded-lg mt-4">Fermer</button>
+                            </div>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-[#e9eaeb] p-6 rounded-lg">
+                          <a href="#" id="show-popup-image5"><img class="h-40 rounded w-full object-cover hover:scale-105 transition-transform object-center mb-6" src="https://cdn.discordapp.com/attachments/1022229564761587834/1106840521902653450/image.png" alt="content"></a>
+                          <div id="popupImage5" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                            <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                              <img class="h-96 rounded w-full object-cover object-center mb-2" src="https://cdn.discordapp.com/attachments/1022229564761587834/1106840521902653450/image.png" alt="content">
+                              <button id="close-popup-image5" class="bg-[#5ec08b] text-white mt-4 mx-20 px-4 py-2 rounded-lg">Fermer</button>
+                            </div>
+                          </div>
+
+                          
+                          <h3 class="tracking-widest text-[#5ec08b] text-xs font-medium title-font">Finale - SpeedTech</h3>
+                          <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Collines</h2>
+                          <p class="leading-relaxed text-base text-[#2f2f2f]">Un doux soleil printanier vous guidera dans vos derniers efforts, sur cette carte donnant le thème final de la compétition.</p>
+                          <div id="show-popup7" class="text-white py-1 px-2 rounded-lg transition-transform hover:scale-105 bg-[#5ec08b] inline-flex items-center mt-4"> <a href="#">En savoir plus </a> </div>
+                          <div id="popup7" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 text-[#2f2f2f] bg-opacity-75 flex items-center justify-center">
+                            <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                              <h2 class="text-2xl text-center font-bold text-black mb-4">Collines</h2>
+                              <p class="text-lg text-center">Cette carte de Trackmania offre une expérience de course unique aux joueurs. Les enchaînements de routes, d'herbes et de saucisses (des obstacles en forme de saucisse, fréquents dans les courses de karting) peuvent sembler magnifiques, mais ils peuvent également être déroutants pour les joueurs qui ne sont pas familiers avec la piste.</p>
+                              <a class="text-slate-500 underline pt-2 "  href="https://trackmania.exchange/maps/download/108750">Download Race Map</a>
+                              <button id="close-popup7" class="bg-[#5ec08b] text-white  mx-20 px-4 py-2 rounded-lg mt-4">Fermer</button>
+    
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <div class="bg-[#e9eaeb] p-6 rounded-lg">
+                          <a href="#" id="show-popup-image1"><img class="h-40 rounded w-full object-cover hover:scale-105 transition-transform object-center mb-6" src="https://cdn.discordapp.com/attachments/1022229564761587834/1106840714618339328/image.png" alt="content"></a>
+                          <div id="popupImage1" class="hidden fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                            <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                              <img class="h-96 rounded w-full object-fit object-center mb-2" src="https://i.postimg.cc/wByyDdGQ/image-2023-05-18-154451638-v4.jpg" alt="content" width="1920" height="1080">
+                              <button id="close-popup-image1" class="bg-[#5ec08b] text-white mt-4 mx-20 px-4 py-2 rounded-lg">Fermer</button>
+    
+                            </div>
+                          </div>
+                          
+                          <h3 class="tracking-widest text-[#5ec08b] text-xs font-medium title-font">Finale - SpeedTech</h3>
+                          <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Grass</h2>
+                          <p class="leading-relaxed text-base text-[#2f2f2f]">Cette carte entièrement couverte d'herbe promet de mettre à niveau vos connaissances du jeu...</p>
+                          <div id="show-popup8" class="text-white py-1 px-2 rounded-lg transition-transform hover:scale-105 bg-[#5ec08b] inline-flex items-center mt-4"> <a href="#">En savoir plus </a> </div>
+                          <div id="popup8" class="hidden fixed top-0 left-0 w-full h-full text-[#2f2f2f] bg-gray-800 bg-opacity-75 flex items-center justify-center">
+                            <div class=" mx-10 bg-white flex flex-col justify-center rounded-lg p-8">
+                              <h2 class="text-2xl text-center font-bold text-black mb-4">Grass</h2>
+                              <p class="text-lg text-center">La prise de risque sera probablement l'élément le plus important pour gagner cette dernière course. Les joueurs devront être prêts à prendre des risques calculés, tels que sauter par-dessus des obstacles ou prendre des virages serrés à grande vitesse, pour gagner des précieuses secondes et dépasser leurs adversaires.</p>
+                              <a class="text-slate-500 underline pt-2 "  href="https://trackmania.exchange/maps/download/104042">Download Race Map</a>
+                              <button id="close-popup8" class="bg-[#5ec08b] text-white  mx-20 px-4 py-2 rounded-lg mt-4">Fermer</button>
+    
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </section>
+        </div>
+
+
+        <div id="output" class="my-10 text-center"></div>
+    </div>
+
+    <footer class="bg-[#2f2f2f] mt-10 py-4 text-[#D9D2D2] text-center">
+        Brought to life by
+        <a href="https://github.com/aent0n" class="text-[#5ec08b] underline">aent0n</a>
+    </footer>
+</html>
