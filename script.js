@@ -338,3 +338,16 @@ showPopupImage8.addEventListener('click', () => {
 closePopupImage8.addEventListener('click', () => {
   popupImage8.classList.add('hidden');
 });
+
+const showPopupDLHelper = document.getElementById('show-popup-DLHelper');
+const closePopupDLHelper = document.getElementById('close-popup-DLHelper');
+const popupDLHelper = document.getElementById('popupDLHelper');
+
+showPopupDLHelper.addEventListener('click', () => {
+  event.preventDefault();
+  popupDLHelper.classList.remove('hidden');
+});
+
+closePopupDLHelper.addEventListener('click', () => {
+  popupDLHelper.classList.add('hidden');
+});
